@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="Number" id="inp1" placeholder="Enter 1st Number">
+    <input type="Number" id="inp2" placeholder="Enter 2nd Number">
+    <br>
+    <br><br>
+    <div>
+        <button  onclick="add()">Add</button>
+        <button onclick="subs()">Substract</button>
+        <button onclick="mul()">Multiply</button>
+        <button onclick="div()">Divide</button>
+    </div>
+</body>
+<script>
+    function add(){
+        let num1=document.getElementById("inp1");
+        let num2=document.getElementById("inp2");
+        alert(Number(num1.value) + Number(num2.value));
+    }
+    function subs(){
+        let num1=document.getElementById("inp1");
+        let num2=document.getElementById("inp2");
+        alert(Math.abs(Number(num1.value) - Number(num2.value)));
+
+    }
+    function mul(){
+        let num1=document.getElementById("inp1");
+        let num2=document.getElementById("inp2");
+        alert(Number(num1.value) * Number(num2.value));
+
+    }
+    function div(){
+        let num1=document.getElementById("inp1");
+        let num2=document.getElementById("inp2");
+        alert(Math.floor((Number(num1.value) / Number(num2.value))));
+    }
+
+</script>
+</html>

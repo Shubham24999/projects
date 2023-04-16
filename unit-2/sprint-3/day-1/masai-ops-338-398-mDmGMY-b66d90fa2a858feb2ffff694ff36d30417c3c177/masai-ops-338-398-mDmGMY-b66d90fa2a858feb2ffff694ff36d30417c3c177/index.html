@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Form</title>
+    <style>
+      /* Write all necessery css here  */
+      .container{
+        display: flex;
+        width: 80%;
+        margin: auto;
+      }
+
+      .container > div{
+        margin-right: 50px;
+      }
+      .container > div > form{
+        display: grid;
+        grid-template-columns: repeat(1,fr);
+        gap: 20px;
+      }
+      .container h1{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Signup Form</h1>
+        <!-- Create the Signup form here  -->
+        <form>
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email Address">
+          <input type="text" placeholder="Country">
+          <input type="number" placeholder="Phone">
+          <input type="password" placeholder="Password">
+          <input type="submit" placeholder="Create Account">
+        </form>
+    </div>
+    <div>
+      <h1>Signin Form</h1>
+      <!-- Create the Signin Form Here  -->
+      <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email Address">
+        <input type="password" placeholder="Password">
+        <input type="submit" placeholder="Signin">
+      </form>
+
+    </div>
+    </div>
+  </body>
+</html>

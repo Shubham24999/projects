@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Masai Games</title>
+  </head>
+  <body>
+    <div id="min"></div>
+    <div id="max"></div>
+    <div id="score">
+    </div>
+    <div id="keypad">
+      <button class="number">0</button>
+      <button class="number">1</button>
+      <button class="number">2</button>
+      <button class="number">3</button>
+      <button class="number">4</button>
+      <button class="number">5</button>
+      <button class="number">6</button>
+      <button class="number">7</button>
+      <button class="number">8</button>
+      <button class="number">9</button>
+    </div>
+    <button id="enter">ENTER</button>
+  </body>
+  <script>
+    let score=document.getElementById("score");
+    let keypad=document.getElementById("keypad");
+    let num=document.getElementsByClassName("number");
+    let min=document.getElementById("min");
+    let max=document.getElementById("max"); 
+    let enter=document.getElementById("enter");
+    
+    let outputtext="";
+    // console.log(keypad);
+
+    for(let i=0;i<num.length;i++){
+      num[i].addEventListener("click", (e)=>{
+        outputtext+=e.target.innerText;
+        score.innerText=outputtext;
+        console.log(outputtext);
+
+      });
+    }
+
+    enter.addEventListener("click",()=>{
+      // score.innerText=outputtext;
+      outputtext="";
+      // console.log(score.innerText)
+      if(min==null && max==null){
+        min.innerText=+score.innerText;
+        max.innerText=+score.innerText;
+        score.innerText="";
+        outputtext="";
+      }
+      else if(+score.innerText>+max.innerText){
+        max.innerText=+score.innerText;
+        // console.log(score.innerText)
+        score.innerText="";
+        outputtext="";
+      }
+      else if(+min.innerText>+score.innerText){
+        min.innerText=+score.innerText;
+        // console.log(score.innerText)
+        score.innerText="";
+        outputtext="";
+      }
+    });
+
+
+
+  </script>
+</html>

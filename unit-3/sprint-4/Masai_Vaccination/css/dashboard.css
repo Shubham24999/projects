@@ -1,0 +1,43 @@
+#nav{
+    border: 1px solid black;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+}
+#dashboard-cont{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    color: black;
+    
+}
+#dash{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.red{
+    background-color: red;
+    cursor: pointer;
+}
+.green{
+    background-color: green;
+    cursor: pointer;
+}
+
+.card{
+    /* border: 1px solid red; */
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    border:none;
+}
+
+body{
+    background-color: #26C6DA;
+}

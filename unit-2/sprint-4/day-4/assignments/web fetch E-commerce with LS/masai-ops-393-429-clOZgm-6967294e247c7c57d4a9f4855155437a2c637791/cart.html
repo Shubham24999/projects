@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <style>
+      /* Write all necessery css here  */
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+    </div>
+  </body>
+  <script>
+    // Write all necessery JS here
+    let container=document.getElementById("cart-container");
+    let total =document.getElementById("total")
+    let cardData=JSON.parse(localStorage.getItem("cart"))||[];
+    let totalspan=document.getElementById("cart-total");
+    showuser(cardData);
+    function showuser(data){
+      container.innerHTML="";
+      let totalPrice=0;
+      totalspan.innerText=0;
+      data.forEach((element,index) => {
+        let card = document.createElement("div");
+        let image = document.createElement("img");
+        image.setAttribute("src",element.img)
+
+        let brand = document.createElement("h2");
+        brand.innerText=element.brand;
+
+        let price = document.createElement("h3");
+        price.innerText=element.price;
+
+        let details = document.createElement("p");
+        details.innerText=element.details;
+
+        let category = document.createElement("p");
+        category.innerText=element.category;
+
+        let Qunatity=document.createElement("span");
+        // let count=+element.Qunatity;
+        // let count=+element.Qunatity;
+        Qunatity.innerText=element.Qunatity;
+
+        let increment = document.createElement("button");
+        increment.innerText="+";
+        increment.addEventListener("click",()=>{
+          // count=localStorage.getItem("count");
+          // count++;
+          Qunatity.innerText++;
+          totalPrice+=element.Qunatity*element.price;
+          totalspan.innerText=totalPrice;
+          // console.log("add");
+          // localStorage.setItem("count",count);
+        })
+
+        let decrement = document.createElement("button");
+        decrement.innerText="-";
+        decrement.addEventListener("click",()=>{
+          // count--;
+          if(Qunatity.innerText>1){
+            Qunatity.innerText--;
+            totalPrice= totalPrice - element.Qunatity*element.price;
+            totalspan.innerText=totalPrice;
+          }
+
+
+        })
+        let deletecard =document.createElement("button");
+        deletecard.innerText="Remove";
+        deletecard.addEventListener("click",()=>{
+          container.innerHTML="";
+          let final_list= cardData.filter((el,ind)=>{
+            if(index==ind){
+              return false;
+            }
+            else{
+              return true;
+            }
+          })
+          cardData=final_list;
+          localStorage.setItem("cart",JSON.stringify(cardData));
+          showuser(final_list);
+        })
+        if(cardData.length===0){
+          totalPrice=0;
+        }
+        totalPrice+=element.Qunatity*element.price;
+        totalspan.innerText=totalPrice;
+        card.append(image,brand,price,details,category,increment,Qunatity,decrement,deletecard);
+        container.append(card);
+      });
+    }
+
+  </script>
+</html>

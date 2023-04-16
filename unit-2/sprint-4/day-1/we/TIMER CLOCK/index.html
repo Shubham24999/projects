@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMER CLOCK</title>
+    <style>
+        div{
+            display: grid;
+            grid-template-columns: 40px 40px 40px;
+            gap: 5px;
+            width: 20%;
+            padding: 80px;
+            margin: auto;
+        }
+        div h1:nth-child(1){
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        div h1:nth-child(2){
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        div h1:nth-child(3){
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="hour">00</h1>
+        <h1 id="minute">00</h1>
+        <h1 id="seconds">00</h1>
+    </div>
+</body>
+<script>
+let secondsheading=document.getElementById("seconds");
+let minuteheading=document.getElementById("minute");
+let hourheading=document.getElementById("hour");
+
+let seconds=0;
+let minute=0;
+let hour=0;
+
+setInterval(function (){
+    seconds++;
+    if(seconds==60){
+        minute++;
+        if(minute==60){
+            hour++;
+            hourheading.innerText=hour;
+            minute=0
+        }
+        minuteheading.innerText=minute;
+        seconds=0;
+
+    }
+    secondsheading.innerText=seconds;
+},1000);
+
+</script>
+</html>

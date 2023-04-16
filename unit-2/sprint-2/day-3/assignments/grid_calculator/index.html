@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(5, 100px);
+            width: 450px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            gap: 10px;
+            grid-template-areas: "a a a a"
+                                 "b c d e"
+                                 "f g h i"
+                                 "j k l m"
+                                 "n o p q";
+        }
+        h1{
+            text-align: center;
+            color: #0097A7;
+        }
+        #main div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #main > div:nth-child(1){
+            background-color: white;
+            grid-area: a;
+        }
+        #main > div:nth-child(2){
+            background-color: white;
+            grid-area: b;
+        }
+        #main > div:nth-child(3){
+            background-color: white;;
+            grid-area: c;
+        }
+        #main > div:nth-child(4){
+            background-color: white;;
+            grid-area: d;
+        }
+        #main > div:nth-child(5){
+            background-color: black;
+            color: white;
+            grid-area: e;
+        }
+        #main > div:nth-child(6){
+            background-color: white;
+            grid-area: f;
+        }
+        #main > div:nth-child(7){
+            background-color: white;
+            grid-area: g;
+        }
+        #main > div:nth-child(8){
+            background-color: white;
+            grid-area: h;
+        }
+        #main > div:nth-child(9){
+            background-color: black;
+            color: white;
+            grid-area: i;
+        }
+        #main > div:nth-child(10){
+            background-color: white;
+            grid-area: j;
+        }
+        #main > div:nth-child(11){
+            background-color: white;
+            grid-area: k;
+        }
+        #main > div:nth-child(12){
+            background-color: white;
+            grid-area: l;
+        }
+        #main > div:nth-child(13){
+            background-color: black;
+            color: white;
+            grid-area: m;
+        }
+        #main > div:nth-child(14){
+            background-color: red;
+            grid-area: n;
+        }
+        #main > div:nth-child(15){
+            background-color: white;
+            grid-area: o;
+        }
+        #main > div:nth-child(16){
+            background-color: black;
+            color: white;
+            grid-area: p;
+        }
+        #main > div:nth-child(17){
+            background-color: black;
+            color: white;
+            grid-area: q;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="main">
+        <div class="num"></div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="btn">+</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="btn">-</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+        <div class="btn">x</div>
+        <div id="red">C</div>
+        <div class="num">0</div>
+        <div class="btn">=</div>
+        <div class="btn">/</div>
+    </div>
+</body>
+</html>

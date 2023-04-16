@@ -1,0 +1,38 @@
+#container{
+    border: 1px solid black;
+    width: 40%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container > div{
+    /* justify-content: ; */
+    margin: 20px;
+    /* margin: 30px 0px; */
+}
+body{
+    background-color: antiquewhite;
+}
+#welcome{
+    text-align: center;
+}
+#nav{
+    border: 1px solid black;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+}
+
+#main{
+    width: 70%;
+    margin: auto;
+    /* background-color: #81D4FA; */
+}
+
