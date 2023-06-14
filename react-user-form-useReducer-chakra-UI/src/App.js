@@ -65,14 +65,14 @@ function App() {
   };
 
 
-  const deleteuser=(idx)=>{
-    const newuserlist=submittedData.filter((elm,index)=>{
-      return idx!==index+1;
+  const deleteuser = (idx) => {
+    const newuserlist = submittedData.filter((elm, index) => {
+      return idx !== index + 1;
     })
     console.log(newuserlist)
     setSubmittedData(newuserlist)
   }
-  
+
 
 
   return (
@@ -115,6 +115,9 @@ function App() {
             </FormControl>
           </form>
         </Box>
+        <div>
+          {submittedData.length === 0 && <Heading textAlign="center" color="red" data-testid="no-user-container">No Users Found</Heading>}
+        </div>
         <Box>
           <TableContainer>
             <Table variant='solid' size="lg" colorScheme="black">
@@ -128,9 +131,11 @@ function App() {
                   <Th >Delete</Th>
                 </Tr>
               </Thead>
-              {submittedData.length !== 0 ? submittedData.map((elm, ind) => {
-                return <UserRow style={{border:"1px solid black"}} key={ind} ind={ind + 1} deleteuser={deleteuser} name={elm.name} gender={elm.gender} role={elm.role} maritalStatus={elm.maritalStatus} />
-              }) : <Heading textAlign="center" data-testid="no-user-container">No Users Found</Heading>}
+
+              {submittedData.length !== 0 && submittedData.map((elm, ind) => {
+                return <UserRow key={ind} ind={ind + 1} deleteuser={deleteuser} name={elm.name} gender={elm.gender} role={elm.role} maritalStatus={elm.maritalStatus} />
+              })}
+
             </Table>
           </TableContainer>
 
