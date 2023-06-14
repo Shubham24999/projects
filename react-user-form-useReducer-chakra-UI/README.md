@@ -21,9 +21,9 @@ npm run test
 - Role data should be taken using a "select" tag, with options `FrontEnd Developer`, `BackEnd Developer`, and `FullStack Developer`.
 - Marital Status data should be taken using a single `checkbox` with a "Married" label if checked print as `married` else `unmarried`
 - When there is no data print `no users found`  with data-testid = `no-user-container`
-- ![](https://i.imgur.com/FD41Fmj.png)
+- [![2023-06-14-1.png](https://i.postimg.cc/QtxsXnWV/2023-06-14-1.png)](https://postimg.cc/1gTbBBBZ)
 - Once the details are filled and submitted (stored in the submittedData variable inside App.js), the form should display the entered details in tabular format.
-  ![](https://i.imgur.com/22UVvCc.png)
+[![2023-06-14-2.png](https://i.postimg.cc/Zn5rxZvZ/2023-06-14-2.png)](https://postimg.cc/ft1tMGvg)
 - To reset the reducer state in the initial state, create a additional case in the reducer function,
   - Use reset as one of the types in reducer function to achieve the form reset functionality
 - use Chakra UI components to make the UI
