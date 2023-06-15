@@ -1,12 +1,14 @@
-export default function BookCard(props) {
-  const {img,title,price,year,author}=props
-  console.log(props)
+import "./BookCard.css"
+
+export default function BookCard({img,title,price,year,author}) {
+  // const {img,title,price,year,author}=props
+  // console.log()
   return (
-    <div data-testid='book-card'>
-        <img src={img} alt={""} />
-        <b><div data-testid='book-card-title'>{title}<span>({year})</span></div></b>
-        <div data-testid='book-card-author'>{author}</div>
-        <div data-testid='book-card-price'>{price}</div>
+    <div data-testid='book-card' className="bookcard">
+        <div className="cardimg"><img src={img} alt={title} /></div>
+        <div data-testid='book-card-title'><b>Title:-{title}</b><span>({year})</span></div>
+        <div data-testid='book-card-author'><b>Author:-</b> {author}</div>
+        <div data-testid='book-card-price'><b>Price:- Rs.</b>{price}</div>
     </div>
   )
 }

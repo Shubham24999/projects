@@ -9,7 +9,7 @@ export default function NonFiction() {
 
       <div className="books-container">
         {data.map((elm)=>{
-          return <BookCard img={elm.img} title={elm.title} price={elm.title} year={elm.year} author={elm.author} />
+          return <BookCard img={elm.img} title={elm.title} price={elm.price} year={elm.year} author={elm.author} />
         })}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Fiction from "./components/Fiction";
 import NonFiction from "./components/NonFiction";
-
+import "./App.css"
 
 
 function App() {
@@ -14,13 +14,13 @@ function App() {
   };
   
   return (
-    <div>
+    <div className="container">
       <h1>Mini Book Store</h1>
 
       <button data-testid="toggle-btn" onClick={handleClick}>{buttontext}</button>
 
-      <div data-testid="conditional-container">
-      {buttontext === "Show Non-Fiction Books" ? <Fiction /> : <NonFiction />}
+      <div data-testid="conditional-container" >
+      {buttontext === "Show Non-Fiction Books" ? <Fiction className="cont" /> : <NonFiction className="cont" />}
       </div>
     </div>
   );
