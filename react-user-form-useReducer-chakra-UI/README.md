@@ -7,9 +7,6 @@
 // run locally
 npm run start
 
-// test locally
-npm run test
-
 ```
 
 ## Description
