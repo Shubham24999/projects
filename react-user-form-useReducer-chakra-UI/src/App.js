@@ -60,8 +60,14 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmittedData([...submittedData, state]);
+    if(name==="" || gender==="" || role==="" || mailid==="" || contactno===""){
+      alert("Please fill the Empty details")
+
+    }
+    else{
+      setSubmittedData([...submittedData, state]);
     dispatch({ type: "reset" });
+    }
   };
 
 
