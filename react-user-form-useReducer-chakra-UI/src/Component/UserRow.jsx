@@ -10,14 +10,15 @@ import { DeleteIcon } from '@chakra-ui/icons'
 
 
 // use Td component from  from chakra ui to display the user details
-const UserRow = ({ name, gender, role, maritalStatus, ind,deleteuser }) => {
-  // console.log(maritalStatus)
+const UserRow = ({ name, gender, role, maritalStatus, ind,deleteuser,contactno }) => {
+  console.log(contactno)
   return <>
     <Tbody  >
       <Tr>
         <td>{ind}</td>
         <Td>{name}</Td>
         <Td>{gender}</Td>
+        <td>{contactno}</td>
         <Td>{role}</Td>
         <Td>{maritalStatus?"married":"unmarried"}</Td>
         <Td className="dlt" onClick={()=>deleteuser(ind)} boxSize="4"><DeleteIcon /></Td>

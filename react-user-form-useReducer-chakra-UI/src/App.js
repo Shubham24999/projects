@@ -28,8 +28,8 @@ const initialState = {
 
 //should have the cases "name", "gender", "role", "maritalStatus", and "reset" along with the default cases
 const reducer = (state, action) => {
-  console.log(action.payload);
-  console.log(initialState.mailid)
+  // console.log(action.payload);
+  // console.log(initialState.mailid)
   switch (action.type) {
     case 'name':
       return { ...state, name: action.payload };
@@ -60,7 +60,12 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(name==="" || gender==="" || role==="" || mailid==="" || contactno===""){
+    let checknu="";
+    checknu+=contactno;
+    if(checknu.length!==10){
+      alert("Please Enter Valid Contact Number");
+    }
+    else if(name==="" || gender==="" || role==="" || mailid==="" || contactno===""){
       alert("Please fill the Empty details")
 
     }
@@ -75,7 +80,7 @@ function App() {
     const newuserlist = submittedData.filter((elm, index) => {
       return idx !== index + 1;
     })
-    console.log(newuserlist)
+    // console.log(newuserlist)
     setSubmittedData(newuserlist)
   }
 
@@ -95,7 +100,7 @@ function App() {
               <Input type="text" name="mailid" value={mailid} onChange={(e) => dispatch({ type: 'mailid', payload: e.target.value })} />
 
               <FormLabel>Contact No.</FormLabel>
-              <Input type="text" maxLength="10" name="contactno" value={contactno} onChange={(e) => dispatch({ type: 'contactno', payload: e.target.value })} />
+              <Input type="number" maxLength={10} name="contactno" value={contactno} onChange={(e) => dispatch({ type: 'contactno', payload: e.target.value })} />
 
               <FormLabel>Gender</FormLabel>
               <Select name="gender" data-testid="gender-select" value={gender} onChange={(e) => dispatch({ type: 'gender', payload: e.target.value })}>
@@ -127,19 +132,25 @@ function App() {
         <Box>
           <TableContainer>
             <Table variant='solid' size="lg" colorScheme="black">
-              <Thead>
-                <Tr>
-                  <Th>S.NO</Th>
-                  <Th>USER</Th>
-                  <Th>GENDER</Th>
-                  <Th>ROLE</Th>
-                  <Th>MARITAL STATUS</Th>
-                  <Th >Delete</Th>
-                </Tr>
-              </Thead>
+              {
+                submittedData.length!==0 && (
+                  <Thead>
+                  <Tr>
+                    <Th>S.NO</Th>
+                    <Th>USER</Th>
+                    <Th>GENDER</Th>
+                    <Th>Contact No.</Th>
+                    <Th>ROLE</Th>
+                    <Th>MARITAL STATUS</Th>
+                    <Th >Delete</Th>
+                  </Tr>
+                </Thead>
+
+                )
+              }
 
               {submittedData.length !== 0 && submittedData.map((elm, ind) => {
-                return <UserRow key={ind} ind={ind + 1} deleteuser={deleteuser} name={elm.name} gender={elm.gender} role={elm.role} maritalStatus={elm.maritalStatus} />
+                return <UserRow key={ind} ind={ind + 1} deleteuser={deleteuser} contactno={elm.contactno} name={elm.name} gender={elm.gender} role={elm.role} maritalStatus={elm.maritalStatus} />
               })}
 
             </Table>
