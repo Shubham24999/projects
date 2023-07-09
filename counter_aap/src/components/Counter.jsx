@@ -1,4 +1,6 @@
 import { useState } from "react"
+import "./Counter.css"
+
 
 function Counter(){
     // const {num}=props
@@ -12,11 +14,13 @@ function Counter(){
         setNumber(number*2)
     }
     return <div>
-        <h2 data-testid = "counter-header">Counter</h2>
-        <h3 data-testid= "count">{number}</h3>
-        <button data-testid = "add-btn" onClick={()=>{handle(1)}}>+</button>
-        <button data-testid = "subtract-btn" onClick={()=>{handle(-1)}}>-</button>
-        <button data-testid = "double-btn" onClick={()=>{double()}}>Double</button>
+        <h2 className = "counterheader">Counter</h2>
+        <h3 className= "count">{number}</h3>
+       <div className="btn">
+       <button className = "addbtn" onClick={()=>{handle(1)}} >+</button>
+        <button className = "subtractbtn" onClick={()=>{handle(-1)}} >-</button>
+        <button className = "doublebtn" onClick={()=>{double()}}>Double</button>
+       </div>
     </div>
 }
 
